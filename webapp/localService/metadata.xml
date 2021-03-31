@@ -1,0 +1,69 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+    xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="Z7AM_CRUD_ODATAPROJECT_SRV" xml:lang="en" sap:schema-version="1">
+            <EntityType Name="User" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+                <Property Name="Firstname" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="FIRSTNAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Lastname" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="LASTNAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Emailid" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="EMAILID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Phone" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="PHONE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="COUNTRY" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+                <Property Name="Salary" Type="Edm.Int32" Nullable="false" sap:label="SALARY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Flight" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Airlineid"/>
+                </Key>
+                <Property Name="Airlineid" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Airline" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Airline" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Airline" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Connectid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Flight Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Airportfr" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Dep. airport" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cityfrom" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Depart.city" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Airportto" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Dest. airport" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cityto" Type="Edm.String" Nullable="false" MaxLength="20" sap:label="Arrival city" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="23" Scale="4" sap:label="Airfare" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Curr" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Airline Currency" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="currency-code"/>
+            </EntityType>
+            <EntityType Name="Emp" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Zid"/>
+                </Key>
+                <Property Name="Zname" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="zempn" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zid" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Employee Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zdepart" Type="Edm.String" Nullable="false" MaxLength="25" sap:label="zemployeedepar" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zadd" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="zempadd" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Zcity" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="zemployeec" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="UserItems" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Userid"/>
+                    <PropertyRef Name="Productid"/>
+                </Key>
+                <Property Name="Userid" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="USERID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Productid" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="PRODUCTID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Productname" Type="Edm.String" Nullable="false" MaxLength="12" sap:label="PRODUCTNAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Productprice" Type="Edm.Int32" Nullable="false" sap:label="PRODUCTPRICE" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="Z7AM_CRUD_ODATAPROJECT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="UserSet" EntityType="Z7AM_CRUD_ODATAPROJECT_SRV.User" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FlightSet" EntityType="Z7AM_CRUD_ODATAPROJECT_SRV.Flight" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="EmpCollection" EntityType="Z7AM_CRUD_ODATAPROJECT_SRV.Emp" sap:content-version="1"/>
+                <EntitySet Name="UserItemsSet" EntityType="Z7AM_CRUD_ODATAPROJECT_SRV.UserItems" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <FunctionImport Name="GETEMPLOYEES" ReturnType="Collection(Z7AM_CRUD_ODATAPROJECT_SRV.User)" EntitySet="UserSet" m:HttpMethod="GET">
+                    <Parameter Name="Country" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <atom:link
+                xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/Z7AM_CRUD_ODATAPROJECT_SRV/$metadata"/>
+                <atom:link
+                    xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/Z7AM_CRUD_ODATAPROJECT_SRV/$metadata"/>
+                </Schema>
+            </edmx:DataServices>
+        </edmx:Edmx>

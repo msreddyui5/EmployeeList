@@ -1,0 +1,298 @@
+<mvc:View
+	controllerName="com.sap.controller.Object"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:footerbar="sap.ushell.ui.footerbar"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:t="sap.m.Table"
+	xmlns:core="sap.ui.core">
+
+	<semantic:FullscreenPage
+		id="page"
+		navButtonPress="onNavBack"
+		showNavButton="true"
+		title="{i18n>objectTitle}"
+		busy="{objectView>/busy}"
+		busyIndicatorDelay="{objectView>/delay}">
+		
+		<Carousel width="400px" height="250px">
+			<pages>
+				<Image src="/madhu.jpg"/>
+				<Image src="/madhu1.jpg"/>
+				<Image src="/madhu2.jpg"/>
+				<Image src="/madhu3.jpg"/>
+				<Image src="/madhu4.jpg"/>
+				<Image src="/madhu5.jpg"/>
+				<Text text="My collections"/>
+				
+				
+			</pages>
+		</Carousel>
+		
+		
+		<Panel headerText="Employee Details" expanded="true" expandable="true">
+
+		</Panel >
+		<Panel headerText="List Records" expanded="true" expandable="true">
+		
+	   </Panel>
+	   
+	   <Panel headerText="Table Records" expanded="true" expandable="true">
+	   
+	   	
+	   </Panel>
+	   <IconTabBar>
+	   	<items>
+	   		<IconTabFilter icon="sap-icon://doctor">
+	   			<content>
+	   						<form:SimpleForm  layout="ResponsiveGridLayout">
+			<Label text="Enter Employee Id" />
+			<Text text="Enter the world of js"/>
+			
+			<Label text="google website"/>
+			<Link  text="Google website"  href="http://www.google.com" target="_blank"/>
+			
+			<Label text="googleLogo"/>
+			<Image id="myImage" src="/madhu.jpg" height="150px" width="90px" visible="false"></Image>
+			
+			<Label text="Enter Employee ID"/>
+		<Input id="myId" value="1001" width="250px" enabled="false"/>
+
+		<Label text="Enter Firstname"/>
+		<Input id="myEname" value="Madhu Sudhan Reddy" width="250px" enabled="false"/>
+		<Label text="Enter LastName"/>
+		<Input id="mylname" value=""  width="250px"/>
+		<Label text="Enter Age"/>
+		<Input id="myage" value="28" width="250px"/>
+			<Label text="Enter Emailid"/>
+		<Input  id="myemailid" value="msreddy.452@gmail.com" width="250px"/>
+		<Label text="DOB"/>
+		<DatePicker width="250px"/>
+		<Label text="Enter Salary"/>
+		
+	
+		
+		
+		<Input id="sal" value="33000" width="250px"/>
+		<Label text="Enter Country" width="250px"/>
+		<Input  id="country" value="India" width="250px"/> 
+		
+		<Label text="Enter Date of Joining"/>
+		<DatePicker width="250px"/>
+		<Label text="Are you learning js"/>
+		<CheckBox id="checkbox" selected="true"/>
+		
+		<Label text="Are you sitching your carrier to sap ui5"/>
+		<Switch state="true"/>
+		
+		<Label text="Your Percentage"/>
+		<Slider id="slider" value="70" max="100" width="300px"/>
+		
+		<Label text="Rate Your Skills"/>
+		<RatingIndicator id="ratingindicator" value="3" maxValue="5" />
+		<Label text="Enter Your Comments"/>
+		<TextArea  value="sap fiori training" rows="5" cols="40"  width="300px"/>
+		<Label text="Enter the Time of Joining"/>
+		<Timepicker width="300PX" />
+		<Label text="Select Country"/>
+		<Select width="250px">
+			<core:Item  key="IN" text="India"/>
+			<core:Item key="CA" text="CANADA" />
+			<core:Item key="US" text="America" />
+			<core:Item key="UK" text="England"/>
+		</Select>
+		<Label text="Select Country"/>
+		<ComboBox width="250px">
+			<core:Item key="SL" text="Srilanka"/>
+			<core:Item key="PK" text="Pakistan"/>
+			<core:Item key="BAN" text="Bangladesh"/>
+			<core:Item key="Uk" text="UnitedKingdom"/>
+		</ComboBox>
+		
+		<Label text="Select Country"/>
+		<MultiComboBox width="250px">
+			<core:Item key="SL" text="Srilanka"/>
+			<core:Item key="PK" text="Pakistan"/>
+			<core:Item key="BAN" text="Bangladesh"/>
+			<core:Item key="Uk" text="UnitedKingdom"/>
+		</MultiComboBox>
+		
+			<Label text="Select Country"/>
+		<MultiInput width="250px">
+			<core:Item key="SL" text="Srilanka"/>
+			<core:Item key="PK" text="Pakistan"/>
+			<core:Item key="BAN" text="Bangladesh"/>
+			<core:Item key="Uk" text="UnitedKingdom"/>
+		</MultiInput>
+		
+		<Label text="Select Course"/>
+		<RadioButtonGroup>
+			<buttons>
+			<RadioButton text="SAP UI5"/>
+				<RadioButton text="SAP ABAP"/>
+				<RadioButton text="SAP ABAP"/>
+				<RadioButton text="SAP CLENT"/>
+				<RadioButton text="SAP ODATA"/>
+			</buttons>
+			
+		</RadioButtonGroup>
+		
+			<Label text=""/>
+		<Button text="submitData" type="Accept" press="submitdataEH" width="250px"/>
+		
+		<Label text=""/>
+		<Button text="Edit" type="Reject" press="editEH" width="250px"/> 
+		
+		 <Label text="Select Firstname"  />
+	   <Select items="{/UserSet}"   width="300px" >
+			   	
+	       <core:Item   text="{Firstname}" />
+			   	
+	</Select>
+	
+	<Label text="Select Lastname"/>
+	<Select items="{/UserSet}" width="300px">
+		<core:Item text="{Lastname}"/>
+		
+	</Select>
+	<Label text="Select Firstname"/>
+	<ComboBox items="{/UserSet}" width="300px">
+		<core:Item text="{Firstname}" />
+		</ComboBox>
+		
+		<Label text="Select Lastname"/>
+		<MultiComboBox items="{/UserSet}" width="300px">
+			<core:Item text="{Lastname}"/>
+			
+		</MultiComboBox>
+		
+		<Label text="Select Firstname"/>
+		<MultiInput  suggestionItems="{/UserSet}"  width="350px">
+			<core:Item text="{Firstname}"/>
+			
+		</MultiInput>
+		
+		 <Label text="Select Firstname"  />
+    <Tokenizer tokens="{/UserSet}"  >
+ 	 
+   	  <Token  text="{Firstname}" />
+			   	
+   </Tokenizer>
+   
+   <Label text="Select Firstname" />
+	   <Breadcrumbs links="{/UserSet}">
+			   	
+	  	   <Link  text="{Firstname}" />
+			   	
+	   </Breadcrumbs>
+	   
+	   <Label  text="Select Course" />
+	   <RadioButtonGroup columns="6"> 
+		  <buttons>
+				  	
+			<RadioButton text="SAP Ui5" />
+			<RadioButton text="SAP FIORI" />
+			<RadioButton text="SAP ODATA" />
+			<RadioButton text="HTML" />
+			<RadioButton text="CSS" />
+			<RadioButton text="XML" /> 
+						
+	  	</buttons>	
+	   </RadioButtonGroup>
+	   
+		
+		
+		
+			
+			
+			
+			
+		</form:SimpleForm>
+	   				
+	   			</content>
+	   			
+	   		</IconTabFilter>
+	   		<IconTabFilter icon="sap-icon://retail-store">
+	   			<content>
+	   				<List headerText="List Data" items="{/UserSet}" width="450px" growing="true" growingThreshold="5">
+	   	<StandardListItem title="{Userid}" description="{Firstname}" info="{Emailid}" counter="{Salary}"
+	   	infoState="Success"></StandardListItem>
+	   	
+	   </List>
+	   				
+	   			</content>
+	   			
+	   		</IconTabFilter>
+	   		<IconTabFilter icon="sap-icon://process">
+	   			<content>
+	   					<Table items="{/UserSet}" width="900px" headerText=" table data" fixedLayout="false" growing="true" growingThreshold="10">
+	   		<columns>
+	   			<Column>
+	   				<Label text="userId"/>
+	   				</Column>
+	   				<Column>
+	   					<Label text="FirstName"/>
+	   				</Column>
+	   				<Column>
+	   					<Label text="LastName"/>
+	   				</Column>
+	   				<Column>
+	   					<Label text="Emailid"/>
+	   				</Column>
+	   					<Column>
+	   					<Label text="Country"/>
+	   				</Column>
+	   					<Column>
+	   					<Label text="Salary"/>
+	   				</Column>
+	   		</columns>
+	   		<items>
+	   			<ColumnListItem>
+	   				<cells>
+	   					<Text  text="{Userid}"  />
+	   					<Text text="{Firstname}"/>
+	   					<Text text="{Lastname}"/>
+	   					<Text text="{Emailid}"/>
+	   					<Text text="{Country}"/>
+	   					<Text text="{Salary}" />
+	   				</cells>
+	   			</ColumnListItem>
+	   			
+	   		</items>
+	   		
+	   	</Table>
+	   				
+	   			</content>
+	   			
+	   		</IconTabFilter>
+	   	</items>
+	   </IconTabBar>
+
+		<semantic:content>
+			<ObjectHeader
+				id="objectHeader"
+				title="{Firstname}"
+				number="{
+							path: 'Salary',
+							formatter: '.formatter.numberUnit'
+				}"
+				numberUnit="{Country}">
+			</ObjectHeader>
+ 		</semantic:content>
+
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press="onShareEmailPress"/>
+		</semantic:sendEmailAction>
+
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+
+		<semantic:saveAsTileAction>
+			<footerbar:AddBookmarkButton id ="shareTile" title="{objectView>/saveAsTileTitle}" />
+		</semantic:saveAsTileAction>
+
+	</semantic:FullscreenPage>
+
+</mvc:View>
